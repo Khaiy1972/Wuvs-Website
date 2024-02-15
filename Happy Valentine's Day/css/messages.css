@@ -1,0 +1,186 @@
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+}
+.header .happyValentine {
+  font-family: Great Vibes;
+  color: #0e172c;
+  font-size: 2em;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 0;
+  margin-top: 19px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttonContainer .buttonPage {
+  background: none;
+  border: none;
+  font-family: Great Vibes;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.dividers {
+  border-top: 0.8px #a786df;
+  border-color: #a786df;
+  margin: 7.5px 20px;
+}
+
+.author {
+  position: relative;
+}
+
+.author p {
+  display: flex;
+  justify-content: flex-end;
+  font-family: Great Vibes;
+  color: #0e172c;
+  margin-right: 35px;
+}
+
+.contentContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+
+  background-color: #f1f1f1;
+  height: clamp(100px, 60vh, 600px);
+  width: clamp(100px, 80vw, 1000px);
+  margin: 6vh 0;
+
+  border-radius: 20px;
+}
+
+.mssgBtnContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+
+  width: 100%;
+}
+
+.contentContainer .imgContent {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+
+  height: clamp(100px, 60vh, 600px);
+  width: clamp(100px, 80vw, 1000px);
+}
+
+.contentContainer .imgContent .bgImg {
+  height: clamp(100px, 50vh, 600px);
+
+  border-radius: 15px;
+}
+
+.content .mssgBtnContainer .btnILY {
+  font-family: Great Vibes;
+  font-weight: 0;
+  font-size: 14px;
+  color: #f1f1f1;
+  background-color: #f1f1f100;
+  padding: 30px 50px;
+  border: none;
+  box-shadow: none;
+  border-radius: 50px;
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content .mssgBtnContainer .btnILY:hover {
+  background-color: #0e172c;
+}
+
+.modalContainer {
+  background-color: #0e172c8e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modalContainer.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: #f1f1f1;
+
+  font-family: Great Vibes;
+
+  height: 40vh;
+  width: 40vw;
+  padding: 20px;
+
+  border-radius: 20px;
+}
+
+.modal p {
+  font-family: Roboto;
+  text-align: center;
+}
+
+.btnReturn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  font-family: Great Vibes;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-decoration: none;
+  color: #f1f1f1;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+  height: 40px;
+  transition: 0.3s;
+  box-shadow: 0px 6px 0px -1px rgba(158, 81, 232, 0.79);
+  background-color: #a786df;
+}
+
+.btnReturn:hover {
+  box-shadow: 0 0 #fff;
+  transform: translateY(1px);
+}
