@@ -1,106 +1,30 @@
-a {
-  text-decoration: none;
+@import url("../css/general.css");
+
+.mainHomePage {
+  position: relative;
+
+  background: url("/imgs/ghibliBackground.png") no-repeat fixed;
+  background-size: cover;
+  background-color: var(--pink);
+
+  width: 100vw;
+  height: 100vh;
 }
 
-#mochaChi {
-  height: 300px;
-}
-
-.btn {
-  font-family: Prata;
-  font-weight: 100;
-  font-size: 14px;
-  color: #fff;
-  background-color: #fec7d7;
-  padding: 10px 30px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  border-radius: 50px;
-  transition: 213ms;
-  transform: translateY(0);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  text-transform: lowercase;
-}
-
-.btn:hover {
-  transition: 213ms;
-  padding: 10px 50px;
-  transform: translateY(-0px);
-  background-color: #f1f1f1;
-  color: #0e172c;
-  border: none;
-}
-
-.btnCntnr {
-  display: flex;
-}
-
-.yesBtn {
+.mainHomePage .mainHomePage-Overlay {
   position: absolute;
+  z-index: 2;
+
+  background-color: var(--pink);
+
+  opacity: 0.6;
+
+  width: 100%;
+  height: 100%;
 }
 
-.noBtn {
-  position: absolute;
-  left: 200px;
-}
+.secondHomePage {
+  background-color: var(--violet);
 
-.modal {
-  background-color: #0e172c8e;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal.show {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.innerModal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #f1f1f1;
-  height: 40vh;
-  width: 40vw;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.innerModal h2 {
-  font-family: Great Vibes;
-}
-
-.innerModal p {
-  text-align: center;
-}
-
-.modal .btnNextPage {
-  font-family: Roboto, sans-serif;
-  font-weight: 0;
-  font-size: 14px;
-  color: #f1f1f1;
-  background: linear-gradient(39deg, #fec7d7 0%, #a786df 100%);
-  padding: 11px 50px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-  border-radius: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
+  height: 100vh;
 }
