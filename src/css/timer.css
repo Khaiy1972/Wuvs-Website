@@ -1,0 +1,89 @@
+.timer {
+  position: relative;
+
+  /* background-color: lightgreen; */
+  height: 100vh;
+}
+
+/* timer left side */
+
+.timerLeftSide {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  height: 100vh;
+}
+
+.timerLeftSide .title {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+/*        time tracker */
+
+.timerLeftSide .tracker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-right: 7vw;
+}
+
+#tracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tracker h1 {
+  font-size: 5em;
+}
+
+.tracker h2 {
+  font-size: 2em;
+}
+
+/*        unix tracker */
+
+.timerLeftSide .unixTracker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7vw;
+}
+
+/* right side of timer page */
+
+.timerRightSide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  /* background-color: azure; */
+
+  margin: 10vh 0;
+
+  height: 80vh;
+  width: 7vw;
+}
+
+.timerRightSide img {
+  height: 30px;
+
+  cursor: pointer;
+}
+
+.timerRightSide button {
+  font-family: Lora;
+  font-size: 30px;
+  color: var(--red);
+
+  background: none;
+
+  border: none;
+
+  cursor: pointer;
+}

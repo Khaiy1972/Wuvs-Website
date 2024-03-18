@@ -1,0 +1,25 @@
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.both {
+  height: 100vh;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  overflow: auto;
+}
+.both::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.upper {
+  height: 100vh;
+  background-color: aliceblue;
+}
+
+.lower {
+  height: 100vh;
+  background-color: aquamarine;
+}
