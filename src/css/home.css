@@ -4,6 +4,7 @@
 
   height: 100vh;
   background-color: var(--white);
+  scroll-snap-align: center;
 }
 
 /* home left side */
@@ -78,6 +79,8 @@
   left: 48%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
+  cursor: pointer;
 }
 
 .homeRightContainer .box {
@@ -93,4 +96,6 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
+  pointer-events: none;
 }

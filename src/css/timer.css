@@ -3,6 +3,7 @@
 
   /* background-color: lightgreen; */
   height: 100vh;
+  scroll-snap-align: center;
 }
 
 /* timer left side */
@@ -78,8 +79,8 @@
 
 .timerRightSide button {
   font-family: Lora;
-  font-size: 30px;
   color: var(--red);
+  font-size: 30px;
 
   background: none;
 
