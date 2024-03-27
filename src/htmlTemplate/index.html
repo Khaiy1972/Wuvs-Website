@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/imgs/home/MKCHLogoW.svg"
+      type="image/x-icon"
+    />
+    <title><%=htmlWebpackPlugin.options.title%></title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="./src/css/general.css" />
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/home.css" />
+    <link rel="stylesheet" href="./src/css/timer.css" />
+    <link rel="stylesheet" href="./src/css/message.css" /> -->
+
+    <!-- js -->
+    <!-- <script defer src="./src/js/timeTracker.js"></script> -->
+  </head>
+  <body>
+    <div class="homePageContainer">
+      <div class="topBarMenu">
+        <a href="#home"><button class="btnHome" id="btnHome">Home</button></a>
+        <a href="#timer"
+          ><button class="btnTimer" id="btnTimer">Timer</button></a
+        >
+        <a href=""
+          ><button class="btnMessage" id="btnMessage">Message</button></a
+        >
+        <a href=""
+          ><button class="btnGallery" id="btnGallery">Gallery</button></a
+        >
+        <a href=""
+          ><button class="btnAboutUs" id="btnAboutUs">About Us</button></a
+        >
+      </div>
+
+      <!-- home -->
+
+      <div class="home" id="home">
+        <div class="homeLeftContainer">
+          <div class="headerImage">
+            <img src="./src/imgs/home/MKCHLogoW.svg" alt="" />
+          </div>
+          <div class="homeHeader">
+            <h1>WUVS</h1>
+            <h2>Our true love will never <br />fade</h2>
+          </div>
+          <div class="paperPlainImage">
+            <img src="./src/imgs/home/paperAirplain.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="homeRightContainer">
+          <div class="image">
+            <img src="./src/imgs/picTogetherPhotos.jpeg" alt="" />
+          </div>
+          <div class="box"></div>
+        </div>
+      </div>
+
+      <!-- timer -->
+
+      <div class="timer" id="timer">
+        <div class="timerLeftSide">
+          <div class="title"><h1 id="timerTitle">Anniversary</h1></div>
+
+          <div class="tracker">
+            <div class="yearTracker" id="tracker">
+              <h1 class="counterYear" id="counterYear">1</h1>
+              <h2 class="dates">Years</h2>
+            </div>
+            <div class="monthTracker" id="tracker">
+              <h1 class="counterMonth" id="counterMonth">9</h1>
+              <h2 class="dates">Months</h2>
+            </div>
+            <div class="weekTracker" id="tracker">
+              <h1 class="counterWeek" id="counterWeek">7</h1>
+              <h2 class="dates">Weeks</h2>
+            </div>
+            <div class="dayTracker" id="tracker">
+              <h1 class="counterDay" id="counterDay">2</h1>
+              <h2 class="dates">Days</h2>
+            </div>
+          </div>
+
+          <div class="unixTracker">
+            <h1 id="unixTracker">050720021119200205022019</h1>
+          </div>
+        </div>
+
+        <div class="timerRightSide">
+          <img
+            src="./src/imgs/timer/trackerMenu.svg"
+            alt=""
+            class="menu"
+            id="menu"
+          />
+          <button class="btnAnniversary" id="btnAnniversary">A</button>
+          <button class="btnBirthday" id="btnBirthday">B</button>
+        </div>
+      </div>
+
+      <div class="message">
+        <div class="her">
+          <div class="photoOfHer"></div>
+          <div class="herMessage"></div>
+        </div>
+        <div class="him"></div>
+        <div class="photoOfHim"></div>
+        <div class="hisMessage"></div>
+      </div>
+    </div>
+  </body>
+</html>
