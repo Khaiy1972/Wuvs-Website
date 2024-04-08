@@ -1,4 +1,16 @@
 .TopMenu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 5;
   background-color: lightblue;
   height: 7vh;
+  width: 100vw;
+}
+
+.TopMenu img {
+  height: 6vh;
+
+  margin-left: 1vw;
 }
