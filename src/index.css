@@ -15,6 +15,9 @@
   --darkPink: #d06d70;
   --darkLightPink: #e79180;
 
+  /* repeatative Heights */
+  --topBarMenu: 7vh;
+
   font-family: "Lora";
   line-height: 1.5;
   font-weight: 400;
@@ -72,13 +75,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 .container {
   position: relative;
@@ -104,6 +107,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
+    color: var(--black);
     background-color: var(--lightPink);
   }
 }

@@ -1,0 +1,84 @@
+.Timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* padding-top: var(--topBarMenu); */
+  /* background-color: lightblue; */
+  height: calc(100vh - var(--topBarMenu));
+}
+
+.header {
+  /* background-color: lightgoldenrodyellow; */
+  width: 100vw;
+}
+
+.header h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.tracker {
+  display: grid;
+  align-items: center;
+  gap: 5vh;
+
+  width: 100vw;
+
+  /* background-color: lightcyan; */
+}
+
+.date {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4vw;
+  /* background-color: lightcoral; */
+}
+
+.date h1,
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.unixTracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: lightblue; */
+}
+
+.menu {
+  display: grid;
+  gap: 5vh;
+  grid-template-rows: 1fr 1fr;
+
+  /* background-color: lightcoral; */
+
+  width: 100vw;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  /* background-color: lightgreen; */
+}
+
+.icon img {
+  aspect-ratio: 1 / 1;
+  height: 7vh;
+}
+
+.btnHolder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+  /* background-color: lightsalmon; */
+}
+
+.btnHolder button {
+  font-size: 2em;
+  color: var(--black);
+  background-color: transparent;
+}
