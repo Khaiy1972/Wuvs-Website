@@ -1,7 +1,6 @@
-import TopMenu from "./modules/TopMenu/TopMenu";
-import Home from "./modules/Index/Home/Home";
-import Timer from "./modules/Index/Timer/Timer";
-import UnixTimer from "./modules/Index/Timer/UnixTimer";
+import React from "react";
+// import { TopMenu, Home, Timer } from "./modules";
+import { TopMenu, Home, Timer } from "./modules";
 
 function App() {
   return (

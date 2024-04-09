@@ -1,4 +1,4 @@
-import wuvsLogo from "../../assets/imgs/Index/home/MKCHLogoW.svg";
+import wuvsLogo from "../../../assets/imgs/Index/home/MKCHLogoW.svg";
 
 import style from "./TopMenu.module.css";
 
