@@ -1,6 +1,6 @@
 import React from "react";
 // import { TopMenu, Home, Timer } from "./modules";
-import { TopMenu, Home, Timer } from "./modules";
+import { TopMenu, Home, Timer, Messages } from "./modules";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <TopMenu />
         <Home />
         <Timer />
+        <Messages />
       </div>
     </>
   );
