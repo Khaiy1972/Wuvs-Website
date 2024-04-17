@@ -23,7 +23,7 @@
 
   aspect-ratio: 0.75/1;
   height: 40vh;
-  border: 3px solid var(--red);
+  border: 3px solid var(--primary);
 
   pointer-events: none;
 }
@@ -48,9 +48,12 @@
   /* background-color: lightgreen; */
 }
 
+.textContainer h1 {
+  color: var(--primary);
+}
+
 .textContainer p {
   font-size: 2rem;
-  color: var(--black);
   text-align: center;
   padding: 0 10vw;
   margin: 0;

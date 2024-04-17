@@ -11,8 +11,8 @@ let herMessages = [
   "hi ulit",
 ];
 let hisMessages = [
-  "\tTo my one and only love of my life, thank you for always taking care of me, always there for me, and especially thank you for loving me no matter what my flaws are. I promise you that I'll never leave you by your side because I will love you until our time will come. Loving you made me realize how beautiful life is, and I want to live my life with you. Thank you very much for everything.",
-  "hiiiiiiii too",
+  "To my one and only love of my life, thank you for always taking care of me, always there for me, and especially thank you for loving me no matter what my flaws are. I promise you that I'll never leave you by your side because I will love you until our time will come. Loving you made me realize how beautiful life is, and I want to live my life with you. Thank you very much for everything.",
+  "When I heard your nightmare of me being gone I got to heaven, and when I saw you cry because of this, my heart melted because I truly saw your love towards me. I got a wonderful, sweet, caring, faithful, and loving partner. I am truly a lucky guy to have you with my whole life. I love you baby.",
   "hi uliiiit",
 ];
 
@@ -32,7 +32,7 @@ function Messages() {
     const intervalId = setInterval(() => {
       changeHerMessage();
       changeHisMessage();
-    }, 30000); // Update interval to 5 seconds
+    }, 30 * 1000); // Update interval to 5 seconds
 
     return () => clearInterval(intervalId);
   }, [herMessage, hisMessage]);

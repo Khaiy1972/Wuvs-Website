@@ -16,6 +16,7 @@
 .header h1 {
   font-size: 2rem;
   text-align: center;
+  color: var(--primary);
 }
 
 .tracker {
@@ -36,9 +37,10 @@
 }
 
 .date h1,
-p {
+.date p {
   display: flex;
   justify-content: center;
+  color: var(--primary);
 }
 
 .unixTracker {

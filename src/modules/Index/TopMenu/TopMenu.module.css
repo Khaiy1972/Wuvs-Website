@@ -4,10 +4,10 @@
   align-items: center;
   top: 0;
   z-index: 5;
-  background-color: var(--white);
+  background-color: var(--background);
   height: var(--topBarMenu);
   width: 100vw;
-  border-bottom: 2px solid var(--red);
+  border-bottom: 2px solid var(--secondary);
 }
 
 .TopMenu img {

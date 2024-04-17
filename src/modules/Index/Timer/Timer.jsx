@@ -115,7 +115,9 @@ function Timer() {
         <div className={style.btnHolder}>
           <button
             onClick={backToAnniv}
-            style={{ color: changeColor === 0 ? "var(--red)" : "var(--black)" }}
+            style={{
+              color: changeColor === 0 ? "var(--primary)" : "var(--text)",
+            }}
             className={style.btnMenu}
           >
             A

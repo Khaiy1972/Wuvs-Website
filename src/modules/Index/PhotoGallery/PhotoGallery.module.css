@@ -1,0 +1,4 @@
+.PhotoGallery {
+  height: calc(100vh - var(--topBarMenu));
+  background-color: lightcoral;
+}
