@@ -1,57 +1,81 @@
 import React, { useState, useEffect } from "react";
-
-import herPic from "../../../assets/imgs/Index/messages/herPic.jpg";
-import hisPic from "../../../assets/imgs/Index/messages/hisPic.jpg";
+import { getDocs, collection } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage"; // Use ref and getDownloadURL
+import { db, imgDb } from "../../../firebase"; // Import storage from firebase.js
 
 import style from "./Messages.module.css";
 
-let herMessages = [
-  "\tI never thought life could be as amazing as this, having you by my side. I am forever thankful to God for bringing such an awesome masterpiece for me to cherish, love, and take care of forever, until my very last minute in this world. I will always be here no matter what and how many circumstances we would encounter as I promise to serve you everything on my power to make you happy, feel loved, and worth. I, your significant other, future wife and mother of your children, promise to love you until my eyes closes before entering the kingdom of the greatest one who brought you to me.",
-  "hiiiiiii",
-  "hi ulit",
-];
-let hisMessages = [
-  "To my one and only love of my life, thank you for always taking care of me, always there for me, and especially thank you for loving me no matter what my flaws are. I promise you that I'll never leave you by your side because I will love you until our time will come. Loving you made me realize how beautiful life is, and I want to live my life with you. Thank you very much for everything.",
-  "When I heard your nightmare of me being gone I got to heaven, and when I saw you cry because of this, my heart melted because I truly saw your love towards me. I got a wonderful, sweet, caring, faithful, and loving partner. I am truly a lucky guy to have you with my whole life. I love you baby.",
-  "hi uliiiit",
-];
-
 function Messages() {
-  const [herMessage, setHerMessage] = useState(0);
-  const [hisMessage, setHisMessage] = useState(0);
-
-  const changeHerMessage = () => {
-    setHerMessage((herMessage + 1) % herMessages.length);
-  };
-
-  const changeHisMessage = () => {
-    setHisMessage((hisMessage + 1) % hisMessages.length);
-  };
+  const [documentData, setDocumentData] = useState([]);
+  const [currentQuoteIndices, setCurrentQuoteIndices] = useState({});
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      changeHerMessage();
-      changeHisMessage();
-    }, 30 * 1000); // Update interval to 5 seconds
+    const fetchQuotesAndImages = async () => {
+      try {
+        const quotesCollection = collection(db, "quotes");
+        const quotesSnapshot = await getDocs(quotesCollection);
 
-    return () => clearInterval(intervalId);
-  }, [herMessage, hisMessage]);
+        const dataPromises = quotesSnapshot.docs.map(async (doc) => {
+          const data = doc.data();
+          const imgRef = data.imgRef;
+
+          // Fetch image URL from Storage
+          let imgUrl = null;
+          if (imgRef) {
+            const imgStorageRef = ref(imgDb, `/messagePhoto/${imgRef}`);
+            imgUrl = await getDownloadURL(imgStorageRef);
+          }
+
+          return {
+            quotes: data.quotes || [],
+            imgUrl: imgUrl,
+          };
+        });
+
+        const fetchedData = await Promise.all(dataPromises);
+
+        setDocumentData(fetchedData);
+
+        // Initialize currentQuoteIndices for each document
+        const initialIndices = {};
+        fetchedData.forEach((_, index) => {
+          initialIndices[index] = 0;
+        });
+        setCurrentQuoteIndices(initialIndices);
+
+        // Start the interval AFTER data is fetched
+        const intervalId = setInterval(() => {
+          setCurrentQuoteIndices((prevIndices) => {
+            const newIndices = { ...prevIndices };
+            for (let docIndex in newIndices) {
+              newIndices[docIndex] =
+                (newIndices[docIndex] + 1) % fetchedData[docIndex].quotes.length;
+            }
+            return newIndices;
+          });
+        }, 10000); // 10 seconds
+
+        return () => clearInterval(intervalId);
+      } catch (error) {
+        console.error("Error fetching quotes and images:", error);
+      }
+    };
+
+    fetchQuotesAndImages(); // Call the function here
+  }, []);
 
   return (
     <div className={style.Messages}>
-      <div className={`${style.herMessage} ${style.content}`}>
-        <img src={herPic} alt="" />
-        <div className={style.textContainer}>
-          <p onClick={changeHerMessage}>{herMessages[herMessage]}</p>
+      {documentData.map((data, docIndex) => (
+        <div className={`${style.herMessage} ${style.content}`} key={docIndex}>
+          {data.imgUrl && <img src={data.imgUrl} alt={`Message ${docIndex + 1}`} />}
+          <div className={style.textContainer}>
+            <p onClick={() => handleQuoteClick(docIndex)}>
+              {data.quotes[currentQuoteIndices[docIndex]]}
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className={`${style.hisMessage} ${style.content}`}>
-        <img src={hisPic} alt="" />
-        <div className={style.textContainer}>
-          <p onClick={changeHisMessage}>{hisMessages[hisMessage]}</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
